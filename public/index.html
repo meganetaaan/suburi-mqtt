@@ -1,0 +1,16 @@
+<html>
+  <head>
+    <script src="/mqtt.min.js"></script>
+  </head>
+  <body>
+    <script>
+      var client = mqtt.connect();
+
+      client.subscribe("M5Stack/tone");
+
+      client.on("message", function(topic, payload) {
+        console.log([topic, payload].join(": "));
+      });
+    </script>
+  </body>
+</html>
